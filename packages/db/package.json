@@ -1,0 +1,26 @@
+{
+	"name": "@arxpoetica/db",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"db:OLD:generate": "drizzle-kit generate:sqlite",
+		"db:OLD:migrate": "node db/migrate.js",
+		"db:OLD:populate": "nodemon db/populate.js",
+		"db-broken:schemas:see:": "https://github.com/drizzle-team/drizzle-kit-mirror/issues/18",
+		"db:introspect": "dotenv -e ../../.env -- drizzle-kit introspect:pg --config=drizzle.config.js",
+		"db:generate": "dotenv -e ../../.env -- drizzle-kit generate:pg --config=drizzle.config.js",
+		"db:migrate": "node db/migrate.js",
+		"db:populate": "nodemon db/populate.js"
+	},
+	"dependencies": {
+		"drizzle-orm": "0.26.3",
+		"postgres": "3.3.5"
+	},
+	"devDependencies": {
+		"@faker-js/faker": "8.0.2",
+		"ansi-colors": "4.1.3",
+		"dotenv-cli": "7.2.1",
+		"drizzle-kit": "0.18.1",
+		"nodemon": "2.0.22"
+	}
+}
