@@ -1,0 +1,19 @@
+{
+	"name": "arxpoetica-project",
+	"version": "0.0.1",
+	"description": "Artists of Good Intent",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/arxpoetica/arxpoetica-project.git"
+	},
+	"license": "MIT",
+	"volta": {
+		"node": "18.16.0"
+	},
+	"scripts": {
+		"dev": "pnpm run --silent \"/^dev:.*/\"",
+		"dev:arxpoetica": "pnpm --filter @arxpoetica/app exec -- pnpm run --silent dev",
+		"cleanup": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && rm -rf packages/app/.svelte-kit && rm pnpm-lock.yaml && pnpm install",
+		"update": "pnpm recursive update --interactive --latest"
+	}
+}
